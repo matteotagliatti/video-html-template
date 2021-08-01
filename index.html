@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Video HTML Template</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="css/main.css">
+   
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/transit.js"></script>
+  <script src="js/modernizr.js"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata|Montserrat|Roboto:400,300,500' rel='stylesheet' type='text/css'>
+
+</head>
+
+
+<body>
+
+  <header class="site-header">
+    <div class="wrapper">
+      <span class="site-title">
+        <ul>
+          <li><a href='index.html' >home</a></li>
+          <li><a href="index.html"><img src="img/logo.png" /></a></li>
+          <li><a href='about.html' >about</a></li>
+        </ul>
+      </span>
+    </div>
+  </header>
+
+  <div class="page-content" id="motion">
+    <div class="page">
+      <article class="post-content">
+        <div class="category-container">
+          <div class="projects-container">
+            <div class='title-group'>
+              <h1 class="title-2">Title</h1>
+              <h2>Write here your subtitle</h2>
+            </div>
+            <div class="projects">
+
+              <a href="work.html">
+                <div class="project">
+                  <img src="img/thumbnail1.jpg" >
+                  <span class="project-text">
+                    <h2>Work 1</h2>
+                    <h3>Year</h3>
+                  </span>
+                </div>
+              </a>
+
+              <a href="work.html">
+                <div class="project">
+                  <img src="img/thumbnail2.jpg" >
+                  <span class="project-text">
+                    <h2>Work 2</h2>
+                    <h3>Year</h3>
+                  </span>
+                </div>
+              </a>
+
+              <a href="work.html">
+                <div class="project">
+                  <img src="img/thumbnail3.jpg" >
+                  <span class="project-text">
+                    <h2>Work 3</h2>
+                    <h3>Year</h3>
+                  </span>
+                </div>
+               </a>
+
+              <a href="work.html">
+                <div class="project">
+                  <img src="img/thumbnail4.jpg" >
+                  <span class="project-text">
+                    <h2>Work 4</h2>
+                    <h3>Year</h3>
+                  </span>
+                </div>
+              </a>
+    
+            </div>
+          </div>
+        </div>
+
+        <script>
+          $(window).on('resize', function () {
+            $('.title-group').css('padding-top', function () {
+                return ($(window).height() - $(this).height() - 60) / 2
+            });
+            if ($(window).scrollTop() < 1) {
+            $('.projects').css('padding-top', function () {
+                return ($(window).height() - $('.title-2').height() - 50) / 2
+            });
+        };
+        }).resize();
+
+          $(window).scroll(function() {    
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 1) {
+                $(".page-content").addClass("scroll");
+            } else {
+                $(".page-content").removeClass("scroll");
+                $('.projects').css('padding-top', function () {
+                return ($(window).height() - $('.title-2').height() - 100) / 2
+            });
+            }
+        });
+        </script>
+
+        <video id="bgvid" playsinline autoplay muted loop>
+          <!-- Video needs to be muted, since Chrome will not autoplay video with sound. WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+          <source src="img/video/video-bg.webm" type="video/webm">
+          <source src="img/video/video-bg.m4v" type="video/mp4">
+
+      </article>
+    </div>
+  </div>
+
+  <script src="js/flexslider.js"></script>
+
+  <script>
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+      animation: "slide",
+      smoothHeight: true,
+      slideshow: false,
+      controlNav: "thumbnails"
+    });
+  });
+  </script>
+
+</body>
+</html>
